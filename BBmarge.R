@@ -1,4 +1,4 @@
-BB.marge=function(cvs.text,xts=TRUE){
+BB.marge=function(cvs.text,xts=FALSE){
 	if(length(grep("csv\\>",cvs.text))==0){
 		stop("\ncsv‚Ìƒtƒ@ƒCƒ‹–¼‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢")
 	}
