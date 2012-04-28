@@ -1,6 +1,9 @@
-BB.marge=function(cvs.text,xts=FALSE){
-	if(length(grep("csv\\>",cvs.text))==0){
-		stop("\ncsv‚Ìƒtƒ@ƒCƒ‹–¼‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢")
+BB.marge <- function(cvs.text,xts=FALSE){
+	if(!is.character){
+		stop("Â¥ncsv.textã®å¼•æ•°ã¯æ–‡å­—åˆ—ã®ã¿ã§ã™")	
+	}
+	else if(length(grep("csv\\>",cvs.text))==0){
+		stop("\ncsvï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
 	}
 
 	x = read.csv(cvs.text)
@@ -13,7 +16,7 @@ BB.marge=function(cvs.text,xts=FALSE){
 	x = apply(x,2,function(x) replace(x,which(x==""),NA))
 	
 	if(n.col==2){
-		cat("‚±‚Ìƒf[ƒ^‚Ímarge‚·‚é•K—v‚ª‚ ‚è‚Ü‚¹‚ñ‚Å‚µ‚½\n")
+		cat("ï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½margeï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½\n")
 		return(x)
 	}
 	
