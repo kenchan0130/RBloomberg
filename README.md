@@ -12,7 +12,7 @@ xtsオプションを有効にする場合xtsライブラリを読み込んで�
 
 
 ## Extra
-Have R above version 2.14, you can compiler packages.
+Have R above version 2.14, you can compiler package.
 
     library(compiler)
     BB.marge.c <- cmpfun(BB.marge)
