@@ -1,9 +1,9 @@
 BB.marge <- function(cvs.text,xts=FALSE){
 	if(!is.character){
-		stop("¥ncsv.textの引数は文字列のみです")	
+		stop("\ncsv.textの引数は文字列のみです")	
 	}
 	else if(length(grep("csv\\>",cvs.text))==0){
-		stop("\ncsv�̃t�@�C���������͂��Ă�������")
+		stop("\ncsvのファイル名を入力してください")
 	}
 
 	x = read.csv(cvs.text)
@@ -16,7 +16,7 @@ BB.marge <- function(cvs.text,xts=FALSE){
 	x = apply(x,2,function(x) replace(x,which(x==""),NA))
 	
 	if(n.col==2){
-		cat("���̃f�[�^��marge�����K�v�������܂����ł���\n")
+		cat("このデータはmargeする必要がありませんでした\n")
 		return(x)
 	}
 	
