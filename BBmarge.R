@@ -50,8 +50,10 @@ BB.marge <- function(csv.text,xts=FALSE){
 	rm(tmp)
 
 	for(j in seq(5,n.col,by=2)){
-		a    = merge(data,na.omit(x[,j:(j+1)]),by="Date",all=TRUE)
-     		data = a[order(as.Date(a$Date)),] 
+		a    = merge(data,na.omit(head(x[,j:(j+1)])),by="Date", all=TRUE, sort=FALSE)
+     		data = a[order(as.Date(a$Date)),]
+     		gc();gc();
+     		rm(a)
 	}
 
 
