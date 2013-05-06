@@ -40,9 +40,9 @@ BB.marge <- function(csv.text,xts=FALSE){
 				}
 				Date.name      = data$Date
 				data           = data[,-1]
-				colnames(data) = col.name
-				rownames(data)   = Date.name
-				if(xts) data     = as.xts(data)
+				colnames(data) = x.name
+				rownames(data) = Date.name
+				if(xts) data   = as.xts(data)
 				return(data)
 			})
 	return(kekka)
